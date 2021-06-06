@@ -13,13 +13,15 @@ public class Ingredient {
     private String title;
     private String img_url;
     private String[] ingredients;
+    private int rating;
 
 
-    public Ingredient(long recipe_id, String title, String img_url, String[] ingredients) {
+    public Ingredient(long recipe_id, String title, String img_url, String[] ingredients, int rating) {
         this.recipe_id = recipe_id;
         this.title = title;
         this.img_url = img_url;
         this.ingredients = ingredients;
+        this.rating = rating;
     }
 
 
@@ -41,6 +43,10 @@ public class Ingredient {
         return img_url;
     }
 
+    public int getRating() {
+        return rating;
+    }
+
     // setters
 
 
@@ -59,6 +65,12 @@ public class Ingredient {
     public void setImg_url(String img_url) {
         this.img_url = img_url;
     }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    // to string
 
     @Override
     public String toString() {

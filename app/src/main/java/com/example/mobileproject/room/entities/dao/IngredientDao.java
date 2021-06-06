@@ -19,5 +19,7 @@ public interface IngredientDao {
     @Query("SELECT * FROM ingredients")
     void getAll();
 
+    @Query("SELECT * FROM ingredients WHERE rating = 5")
+    void getTopRated();
 
 }
