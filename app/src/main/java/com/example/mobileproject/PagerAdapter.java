@@ -5,18 +5,35 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.example.mobileproject.fragments.BrowseFragment;
+import com.example.mobileproject.fragments.HomeFragment;
+import com.example.mobileproject.fragments.MyRecipesFragment;
+
 public class PagerAdapter extends FragmentPagerAdapter {
 
-    public PagerAdapter(FragmentManager fm){
+    private int numOfTabs;
+
+    public PagerAdapter(FragmentManager fm, int tabCount){
         super(fm);
+        this.numOfTabs = numOfTabs;
     }
     @Override
     public Fragment getItem(int position) {
-        return null;
+
+        switch (position){
+            case 0:
+                return new HomeFragment ();
+            case 1:
+                return new BrowseFragment();
+            case 2:
+                return new MyRecipesFragment();
+            default:
+                return null;
+        }
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return numOfTabs;
     }
 }

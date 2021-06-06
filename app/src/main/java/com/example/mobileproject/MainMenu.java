@@ -20,5 +20,26 @@ public class MainMenu extends AppCompatActivity {
         TabItem Browse = findViewById(R.id.Browse);
         TabItem MyRecipes = findViewById(R.id.MyRecipes);
         ViewPager viewPager = findViewById(R.id.view_pager2);
+
+        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+
+        viewPager.setAdapter(pagerAdapter);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 }
