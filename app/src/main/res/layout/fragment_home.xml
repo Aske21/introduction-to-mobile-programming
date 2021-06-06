@@ -3,4 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayoutHome"
     style="@style/ConstraintLayout"
-    tools:context=".fragments.HomeFragment" />
+    tools:context=".fragments.HomeFragment" >
+
+    <ListView
+        android:id="@+id/ListViewHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="2dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
