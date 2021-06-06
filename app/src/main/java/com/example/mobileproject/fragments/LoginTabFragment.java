@@ -24,6 +24,7 @@ public class LoginTabFragment extends Fragment {
         View google = root.findViewById(R.id.fab_google);
 
 
+
         return root;
     }
 }
