@@ -44,6 +44,9 @@ public class User {
         return email;
     }
 
+    public String getSurname() {
+        return surname;
+    }
 
     // setters
 

@@ -12,11 +12,11 @@ public class Ingredient {
     private long recipe_id;
     private String title;
     private String img_url;
-    private String[] ingredients;
+    private String ingredients;
     private int rating;
 
 
-    public Ingredient(long recipe_id, String title, String img_url, String[] ingredients, int rating) {
+    public Ingredient(long recipe_id, String title, String img_url, String ingredients, int rating) {
         this.recipe_id = recipe_id;
         this.title = title;
         this.img_url = img_url;
@@ -35,7 +35,7 @@ public class Ingredient {
         return title;
     }
 
-    public String[] getIngredients() {
+    public String getIngredients() {
         return ingredients;
     }
 
@@ -58,7 +58,7 @@ public class Ingredient {
         this.title = title;
     }
 
-    public void setIngredients(String[] ingredients) {
+    public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
     }
 
@@ -72,13 +72,15 @@ public class Ingredient {
 
     // to string
 
+
     @Override
     public String toString() {
         return "Ingredient{" +
                 "recipe_id=" + recipe_id +
                 ", title='" + title + '\'' +
                 ", img_url='" + img_url + '\'' +
-                ", ingredients=" + Arrays.toString(ingredients) +
+                ", ingredients='" + ingredients + '\'' +
+                ", rating=" + rating +
                 '}';
     }
 }

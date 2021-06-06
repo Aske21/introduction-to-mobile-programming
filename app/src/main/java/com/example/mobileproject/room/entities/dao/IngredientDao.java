@@ -7,6 +7,8 @@ import androidx.room.Update;
 
 import com.example.mobileproject.room.entities.Ingredient;
 
+import java.util.List;
+
 @Dao
 public interface IngredientDao {
 
@@ -17,9 +19,9 @@ public interface IngredientDao {
     public void update(Ingredient ingredient);
 
     @Query("SELECT * FROM ingredients")
-    void getAll();
+    List<Ingredient> getAll();
 
     @Query("SELECT * FROM ingredients WHERE rating = 5")
-    void getTopRated();
+    List<Ingredient> getTopRated();
 
 }
