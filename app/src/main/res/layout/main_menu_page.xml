@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    tools:context=".activities.MainMenu">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -34,19 +35,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="171dp"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent=".7"
-            app:layout_constraintStart_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TableLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
@@ -60,6 +48,7 @@
             app:layout_constraintVertical_bias="0" />
 
         <com.google.android.material.tabs.TabLayout
+            android:id="@+id/TabHome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="21dp"
@@ -70,20 +59,36 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/Home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Home" />
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/Browse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Browse" />
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/MyRecipes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="My Recipes" />
         </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="171dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".7"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
