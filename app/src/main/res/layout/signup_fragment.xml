@@ -5,10 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <include
-        layout="@layout/activity_login"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-88dp" />
+
 
     <EditText
         android:id="@+id/email"
@@ -87,7 +84,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.784"
-        app:layout_constraintWidth_percent=".8" />
+        app:layout_constraintWidth_percent=".8"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

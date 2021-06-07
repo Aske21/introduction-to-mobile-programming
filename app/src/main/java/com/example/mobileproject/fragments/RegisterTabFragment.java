@@ -13,7 +13,7 @@ public class RegisterTabFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.login_tab_fragment, container, false);
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.signup_fragment, container, false);
 
         return root;
     }
