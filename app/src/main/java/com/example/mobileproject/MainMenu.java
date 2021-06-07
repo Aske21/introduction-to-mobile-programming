@@ -11,6 +11,8 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainMenu extends AppCompatActivity {
 
+    ViewPager viewPager2;
+
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,16 +22,16 @@ public class MainMenu extends AppCompatActivity {
         TabItem Home = findViewById(R.id.Home);
         TabItem Browse = findViewById(R.id.Browse);
         TabItem MyRecipes = findViewById(R.id.MyRecipes);
-        ViewPager viewPager = findViewById(R.id.view_pager2);
+        ViewPager viewPager2 = findViewById(R.id.view_pager2);
 
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
 
-        viewPager.setAdapter(pagerAdapter);
+        viewPager2.setAdapter(pagerAdapter);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
+                viewPager2.setCurrentItem(tab.getPosition());
             }
 
             @Override
