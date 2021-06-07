@@ -27,9 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        TabLayout tabLayout = findViewById(R.id.TabLoginReg);
-        TabItem Home = findViewById(R.id.Login);
-        TabItem Browse = findViewById(R.id.Register);
+
         ViewPager viewPager = findViewById(R.id.view_pager);
 
 

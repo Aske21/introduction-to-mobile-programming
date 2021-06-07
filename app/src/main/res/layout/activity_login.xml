@@ -33,31 +33,6 @@
 
         app:layout_constraintVertical_bias="0.9">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/TabLoginReg"
-            android:layout_width="414dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="37dp"
-            android:layout_marginBottom="484dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/Login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Login" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/Register"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Register" />
-
-        </com.google.android.material.tabs.TabLayout>
-
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
@@ -72,6 +47,7 @@
 
         </androidx.viewpager.widget.ViewPager>
 
+
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
@@ -80,8 +56,7 @@
             app:layout_constraintStart_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0"/>
-
+            app:layout_constraintVertical_bias="0" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_google"
