@@ -11,11 +11,11 @@ import com.example.mobileproject.fragments.MyRecipesFragment;
 
 public class PagerAdapter extends FragmentPagerAdapter {
 
-    private int numOfTabs;
+    private int numoftabs;
 
-    public PagerAdapter(FragmentManager fm, int tabCount){
+    public PagerAdapter(FragmentManager fm, int numOfTabs){
         super(fm);
-        this.numOfTabs = numOfTabs;
+        this.numoftabs = numOfTabs;
     }
     @Override
     public Fragment getItem(int position) {
@@ -34,6 +34,11 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return numOfTabs;
+        return numoftabs;
+    }
+
+    @Override
+    public int getItemPosition(@NonNull Object object){
+        return POSITION_NONE;
     }
 }

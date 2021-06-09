@@ -11,38 +11,50 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainMenu extends AppCompatActivity {
 
-    ViewPager viewPager2;
+    private TabLayout tabLayout;
+    private ViewPager viewPagerMMenu;
+    private TabItem tab1, tab2, tab3;
+    public PagerAdapter pagerAdapter;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu_page);
 
-        TabLayout tabLayout = findViewById(R.id.TabHome);
-        TabItem Home = findViewById(R.id.Home);
-        TabItem Browse = findViewById(R.id.Browse);
-        TabItem MyRecipes = findViewById(R.id.MyRecipes);
-        ViewPager viewPager2 = findViewById(R.id.view_pager2);
+        tabLayout = (TabLayout) findViewById(R.id.TabHome);
+        tab1 = (TabItem) findViewById(R.id.Home);
+        tab2 = (TabItem) findViewById(R.id.Browse);
+        tab3 = (TabItem) findViewById(R.id.MyRecipes);
+        viewPagerMMenu = (ViewPager) findViewById(R.id.view_pager2);
 
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPagerMMenu.setAdapter(pagerAdapter);
 
-        viewPager2.setAdapter(pagerAdapter);
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
             @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager2.setCurrentItem(tab.getPosition());
+            public void onTabSelected(TabLayout.Tab tab){
+                viewPagerMMenu.setCurrentItem(tab.getPosition());
+                if (tab.getPosition() == 0){
+                    pagerAdapter.notifyDataSetChanged();
+                }
+                else if (tab.getPosition() == 1){
+                    pagerAdapter.notifyDataSetChanged();
+                }
+                else if (tab.getPosition() == 2){
+                    pagerAdapter.notifyDataSetChanged();
+                }
+
+            }
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab){
             }
 
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
+            public void onTabReselected(TabLayout.Tab tab){
             }
 
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
         });
+
+        viewPagerMMenu.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/LayoutHome"
@@ -8,19 +8,15 @@
     android:orientation="horizontal"
     tools:context=".fragments.HomeFragment">
 
-    <ListView
-        android:id="@+id/listHome"
-        android:layout_width="match_parent"
-        android:layout_height="616dp"
-        android:translationY="300px" />
-
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="411dp"
-        android:layout_height="110dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="Current Top 10 User Rated Recipes"
         android:textAlignment="center"
-        android:textSize="36sp"
-        android:translationX="-1080px" />
-</LinearLayout>
+        android:textSize="24sp" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>
 
