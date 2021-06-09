@@ -11,6 +11,16 @@
     <ListView
         android:id="@+id/listHome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="616dp"
+        android:translationY="300px" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="411dp"
+        android:layout_height="110dp"
+        android:text="Current Top 10 User Rated Recipes"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:translationX="-1080px" />
 </LinearLayout>
 
