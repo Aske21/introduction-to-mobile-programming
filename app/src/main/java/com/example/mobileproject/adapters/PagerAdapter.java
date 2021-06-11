@@ -22,7 +22,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
         switch (position){
             case 0:
-                return new HomeFragment ();
+                return new HomeFragment();
             case 1:
                 return new BrowseFragment();
             case 2:
