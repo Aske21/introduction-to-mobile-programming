@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.example.mobileproject.R;
 import com.example.mobileproject.activities.AddingScreen;
@@ -17,6 +19,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class MyRecipesFragment extends Fragment implements View.OnClickListener {
 
     FloatingActionButton myButton;
+    ListView mListView;
+    String[] mListArray = {"C","C++","JAVA","PYTHON","JAVASCRIPT","GOLANG","PHP","RUBY"};
 
     public MyRecipesFragment() {
         // Required empty public constructor
