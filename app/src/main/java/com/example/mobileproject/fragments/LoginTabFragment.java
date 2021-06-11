@@ -42,7 +42,6 @@ public class LoginTabFragment extends Fragment {
 
         // need to figure out how to get text views and password views
 
-
         return root;
     }
 
