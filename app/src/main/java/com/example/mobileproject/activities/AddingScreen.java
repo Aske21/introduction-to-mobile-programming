@@ -1,4 +1,4 @@
-package com.example.mobileproject.room.entities;
+package com.example.mobileproject.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
