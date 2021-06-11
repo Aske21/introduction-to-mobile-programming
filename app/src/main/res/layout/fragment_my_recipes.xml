@@ -7,20 +7,18 @@
     tools:context=".fragments.MyRecipesFragment">
 
     <ListView
-        android:id="@+id/ListViewMRecipes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </ListView>
+        android:layout_height="match_parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/MyRecipesAdd"
+        android:id="@+id/floatingActionButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/pink"
+        android:layout_marginStart="339dp"
+        android:layout_marginTop="659dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:clickable="true"
-        android:src="@android:drawable/ic_input_add"
-        android:translationX="900px"
-        android:translationY="1700px" />
+        android:src="@android:drawable/ic_input_add" />
 
 </FrameLayout>

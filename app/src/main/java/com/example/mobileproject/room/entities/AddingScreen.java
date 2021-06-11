@@ -15,13 +15,4 @@ public class AddingScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.adding_screen);
     }
-
-    public void buttonClick(View v) {
-        switch(v.getId()) {
-            case R.id.MyRecipesAdd:
-                Intent myIntent = new Intent();
-                startActivity(myIntent);
-                break;
-        }
-    }
 }
