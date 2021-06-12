@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,10 +21,16 @@ public class AddingScreen extends AppCompatActivity {
     private static final int PICK_IMAGE=1;
     Uri imageUri;
 
+    // declarations
+    private EditText title_input, ingredients_input;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.adding_screen);
+
+        title_input = findViewById(R.id.title);
+        ingredients_input  = findViewById(R.id.ingredients);
 
         DishImage = (ImageView) findViewById(R.id.AddPictureDish);
         DishImage.setOnClickListener(new View.OnClickListener(){
@@ -52,6 +59,15 @@ public class AddingScreen extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+
+
+    public void onSave(View view){
+
+    }
+
+    public void onCancel(View view){
+
     }
 
 }

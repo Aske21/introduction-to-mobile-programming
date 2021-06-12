@@ -12,8 +12,8 @@ import java.util.List;
 @Dao
 public interface UserDao {
 
-    @Insert
-    void add(User user);
+    @Query("INSERT INTO users(name,password,email,surname) VALUES(:name, :password, :email, :surname)")
+    void add(String name, String password, String email, String surname);
 
     @Query("SELECT * FROM users WHERE name = :username LIMIT 1")
     User getByName(String username);
@@ -26,6 +26,7 @@ public interface UserDao {
 
     @Query("SELECT * FROM users")
     List<User> getAllUsers();
+
 
     @Update
     void update(User user);

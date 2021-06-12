@@ -43,6 +43,21 @@ public class LoginTabFragment extends Fragment {
         // need to figure out how to get text views and password views
 
 
+        recipeDatabase = recipeDatabase.getInstance(this.getContext());
+
+        email = (EditText) root.findViewById(R.id.email);
+        password = (EditText) root.findViewById(R.id.password);
+
+        login_btn = root.findViewById(R.id.login_button);
+        login_btn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                login(v);
+            }
+        });
+
         return root;
     }
 
@@ -52,18 +67,18 @@ public class LoginTabFragment extends Fragment {
     // login  method - needs work
     public void login(View view){
 
-        email = (EditText) view.findViewById(R.id.email);
-        password = (EditText) view.findViewById(R.id.password);
 
         String email_field = email.getText().toString();
         String password_field = password.getText().toString();
 
 
         // probably need to parse to string in order for it to be able to check users
-        User user = recipeDatabase.userDao().getUserByEmail("email");
+        User user = recipeDatabase.getInstance(this.getContext()).userDao().getUserByEmail(email_field);
 
-        if(user != null && user.getPassword().equals(password)){
+
+        if(user != null && user.getPassword().equals(password_field)){
             // logic
+            System.out.println("Success!");
             return;
         }else{
             Toast.makeText(requireActivity(), "Check both fields!", Toast.LENGTH_LONG).show();
