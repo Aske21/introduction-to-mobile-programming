@@ -23,8 +23,6 @@ import java.util.List;
 public class MyRecipesFragment extends Fragment implements View.OnClickListener {
 
     FloatingActionButton myButton;
-    ListView mListView;
-    String[] mListArray = {"C","C++","JAVA","PYTHON","JAVASCRIPT","GOLANG","PHP","RUBY"};
 
     public MyRecipesFragment() {
         // Required empty public constructor
