@@ -3,20 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragments.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fontFamily="casual"
         android:text="Current Top 10 User Rated Recipes"
         android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
         android:textSize="30sp" />
 
     <ListView
         android:id="@+id/ListViewHome"
         android:layout_width="match_parent"
         android:layout_height="651dp"
-        android:translationY="210px" />
+        android:cacheColorHint="@color/black"
+        android:translationY="200px">
+
+    </ListView>
 
 </FrameLayout>

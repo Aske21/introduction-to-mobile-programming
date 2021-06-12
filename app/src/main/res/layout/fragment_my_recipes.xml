@@ -4,22 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/MyRecipesLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".fragments.MyRecipesFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/MyRecipesConstraint"
+    <ListView
+        android:id="@+id/MyRecipesList"
         android:layout_width="match_parent"
-        android:layout_height="520dp">
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@color/black"
+        tools:layout_conversion_absoluteHeight="731dp"
+        tools:layout_conversion_absoluteWidth="411dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+    </ListView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="731dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/AddButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="326dp"
-            android:layout_marginTop="412dp"
-            android:layout_marginEnd="29dp"
-            android:layout_marginBottom="52dp"
+            android:layout_width="53dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="341dp"
+            android:layout_marginTop="285dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="110dp"
             android:backgroundTint="@color/pink"
             android:clickable="true"
             android:src="@android:drawable/ic_menu_add"
@@ -30,16 +41,5 @@
             tools:layout_conversion_absoluteHeight="56dp"
             tools:layout_conversion_absoluteWidth="56dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ListView
-        android:id="@+id/MyRecipesList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_conversion_absoluteHeight="731dp"
-        tools:layout_conversion_absoluteWidth="411dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
-
-    </ListView>
 
 </FrameLayout>
