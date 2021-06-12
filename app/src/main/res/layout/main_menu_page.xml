@@ -19,6 +19,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginBottom="640dp"
+        android:src="@drawable/logo1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ConstraintLayoutMainMenuSub"
         android:layout_width="410dp"
@@ -41,7 +55,10 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.481">
+            app:layout_constraintVertical_bias="0.481"
+            app:tabIconTint="@color/pink"
+            app:tabIndicatorColor="#DC748D"
+            app:tabTextColor="@color/pink">
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/Home"
@@ -67,31 +84,16 @@
             android:layout_width="410dp"
             android:layout_height="499dp"
 
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="49dp"
+            android:layout_marginBottom="39dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent=".7"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/TabHome">
 
         </androidx.viewpager.widget.ViewPager>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="175dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="176dp"
-        android:layout_marginBottom="640dp"
-        android:src="@drawable/logo1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/WelcomeMain"

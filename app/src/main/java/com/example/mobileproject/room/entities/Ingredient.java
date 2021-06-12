@@ -13,15 +13,17 @@ public class Ingredient {
     private String title;
     private String img_url;
     private String ingredients;
+    private String Preparation;
     private int rating;
 
 
-    public Ingredient(long recipe_id, String title, String img_url, String ingredients, int rating) {
+    public Ingredient(long recipe_id, String title, String img_url, String ingredients, int rating, String Preparation) {
         this.recipe_id = recipe_id;
         this.title = title;
         this.img_url = img_url;
         this.ingredients = ingredients;
         this.rating = rating;
+        this.Preparation = Preparation;
     }
 
 
@@ -47,6 +49,8 @@ public class Ingredient {
         return rating;
     }
 
+    public String getPreparation() { return Preparation; }
+
     // setters
 
 
@@ -70,6 +74,7 @@ public class Ingredient {
         this.rating = rating;
     }
 
+    public void setPreparation(String preparation) { Preparation = preparation; }
     // to string
 
 
