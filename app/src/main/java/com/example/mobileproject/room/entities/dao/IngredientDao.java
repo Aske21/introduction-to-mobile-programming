@@ -12,7 +12,7 @@ import java.util.List;
 @Dao
 public interface IngredientDao {
 
-    @Insert
+    @Query("INSERT INTO ingredients")
     void insertIngredient(Ingredient ingredient);
 
     @Update
