@@ -42,7 +42,6 @@ public class MyRecipesFragment extends Fragment implements View.OnClickListener 
         View CurrentView = inflater.inflate(R.layout.fragment_my_recipes, container, false);
         myButton = (FloatingActionButton) CurrentView.findViewById(R.id.AddButton);
         myButton.setOnClickListener(this);
-        getMyRecipes();
         return CurrentView;
     }
 
@@ -53,8 +52,5 @@ public class MyRecipesFragment extends Fragment implements View.OnClickListener 
     }
 
 
-    private void getMyRecipes(){
-        List<Ingredient> ingredients = RecipeDatabase.getInstance(this.getContext()).ingredientDao().getAll();
-        // testing purposes - >System.out.println("working");
-    }
+
 }

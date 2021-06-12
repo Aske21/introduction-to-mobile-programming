@@ -9,6 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mobileproject.R;
+import com.example.mobileproject.room.entities.Ingredient;
+import com.example.mobileproject.room.entities.RecipeDatabase;
+
+import java.util.List;
 
 public class BrowseFragment extends Fragment {
 
@@ -25,6 +29,13 @@ public class BrowseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        getAllRecipes();
         return inflater.inflate(R.layout.fragment_browse, container, false);
+
+    }
+
+    private void getAllRecipes(){
+        List<Ingredient> ingredients = RecipeDatabase.getInstance(this.getContext()).ingredientDao().getAll();
+        System.out.println("working");
     }
 }

@@ -25,4 +25,6 @@ public interface IngredientDao {
     @Query("SELECT * FROM ingredients WHERE rating = 5")
     List<Ingredient> getTopRated();
 
+    @Query("SELECT * FROM ingredients WHERE recipe_id == :id")
+    List<Ingredient> getMyRecipes(Long id);
 }
