@@ -31,16 +31,17 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="150dp"
+        android:layout_width="123dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="143dp"
+        android:layout_marginTop="330dp"
+        android:layout_marginEnd="145dp"
         android:text="Enter Title of Dish"
+        android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -49,22 +50,41 @@
         android:layout_marginStart="138dp"
         android:layout_marginEnd="138dp"
         android:ems="10"
+        android:hint="Dish Title Here"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="118dp"
-        android:layout_marginEnd="119dp"
-        android:layout_marginBottom="281dp"
+        android:layout_width="210dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="290dp"
         android:text="Enter Ingredients in this Box"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="213dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="99dp"
+        android:background="@drawable/boxlayout"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Write Ingredients Here"
+        android:inputType="textMultiLine"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
