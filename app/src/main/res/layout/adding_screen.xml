@@ -8,7 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/pink">
 
         <ImageView
             android:id="@+id/AddPictureDish"
@@ -36,16 +37,15 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="123dp"
-            android:layout_height="21dp"
-            android:layout_marginStart="144dp"
+            android:layout_width="136dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="138dp"
             android:layout_marginTop="64dp"
-            android:layout_marginEnd="144dp"
+            android:layout_marginEnd="137dp"
             android:text="Enter Title of Dish"
             android:textAlignment="center"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/AddPictureDish" />
 
@@ -65,30 +65,30 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="210dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="101dp"
+            android:layout_width="212dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="100dp"
             android:layout_marginTop="38dp"
-            android:layout_marginEnd="101dp"
+            android:layout_marginEnd="100dp"
             android:text="Enter Ingredients in this Box"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
         <EditText
             android:id="@+id/editTextTextMultiLine"
-            android:layout_width="213dp"
+            android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="99dp"
-            android:layout_marginEnd="99dp"
+            android:layout_marginEnd="82dp"
             android:background="@drawable/boxlayout"
             android:ems="10"
             android:gravity="top"
             android:hint="Write Ingredients Here"
             android:inputType="textMultiLine"
             android:textAlignment="center"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginTop="60dp"
-            android:layout_marginEnd="101dp"
+            android:layout_marginEnd="100dp"
             android:text="Enter Meal Preparation in this box"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
@@ -109,19 +109,46 @@
 
         <EditText
             android:id="@+id/editTextTextMultiLinePrep"
-            android:layout_width="213dp"
+            android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="101dp"
-            android:layout_marginEnd="98dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="81dp"
             android:background="@drawable/boxlayout"
             android:ems="10"
             android:gravity="top"
             android:hint="Write Preparation Here"
             android:inputType="textMultiLine"
             android:textAlignment="center"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <Button
+            android:id="@+id/ButtonConfirmAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="99dp"
+            android:backgroundTint="@color/pink"
+            android:text="Confirm"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ButtonDiscard"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLinePrep" />
+
+        <Button
+            android:id="@+id/ButtonDiscard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="101dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:text="Discard"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLinePrep" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
