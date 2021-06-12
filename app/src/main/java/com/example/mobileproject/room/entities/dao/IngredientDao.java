@@ -13,6 +13,8 @@ import java.util.List;
 public interface IngredientDao {
 
 
+    @Query("INSERT INTO ingredients(title,ingredients,Preparation) VALUES(:title, :ingredients, :Preparation)")
+    public void create(String title,String ingredients,String Preparation);
 
     @Update
     public void update(Ingredient ingredient);

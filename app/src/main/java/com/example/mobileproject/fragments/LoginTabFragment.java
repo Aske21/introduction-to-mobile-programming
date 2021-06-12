@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.mobileproject.MainActivity;
+import com.example.mobileproject.MainMenu;
 import com.example.mobileproject.R;
 import com.example.mobileproject.activities.AddingScreen;
 import com.example.mobileproject.adapters.LoginAdapter;
@@ -57,9 +58,7 @@ public class LoginTabFragment extends Fragment {
             public void onClick(View v)
             {
                 login(v);
-                Intent i = new Intent(getActivity(), MainActivity.class);
-                Toast.makeText(requireActivity(), "Welcome to Foody", Toast.LENGTH_SHORT).show();
-                startActivity(i);
+
             }
         });
 
@@ -84,6 +83,8 @@ public class LoginTabFragment extends Fragment {
         if(user != null && user.getPassword().equals(password_field)){
             // logic
             System.out.println("Success!");
+            Intent i = new Intent(getActivity(), MainMenu.class);
+            startActivity(i);
             return;
         }else{
             System.out.println("error");

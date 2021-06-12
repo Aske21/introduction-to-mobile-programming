@@ -11,8 +11,11 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mobileproject.MainActivity;
 import com.example.mobileproject.R;
 import com.example.mobileproject.room.entities.Ingredient;
+import com.example.mobileproject.room.entities.RecipeDatabase;
+import com.example.mobileproject.room.entities.User;
 
 import java.io.IOException;
 
@@ -25,6 +28,9 @@ public class AddingScreen extends AppCompatActivity {
     // declarations
     private EditText title_input, ingredients_input, description_input;
 
+    // db
+    private RecipeDatabase recipeDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +39,7 @@ public class AddingScreen extends AppCompatActivity {
         title_input = findViewById(R.id.title);
         ingredients_input  = findViewById(R.id.ingredients);
         description_input  = findViewById(R.id.description);
+
 
 
         DishImage = (ImageView) findViewById(R.id.AddPictureDish);
@@ -45,6 +52,7 @@ public class AddingScreen extends AppCompatActivity {
                 gallery.setAction(Intent.ACTION_GET_CONTENT);
 
                 startActivityForResult(Intent.createChooser(gallery, "Select Picture"), PICK_IMAGE);
+                insertData(v);
             }
         });
 
@@ -65,8 +73,20 @@ public class AddingScreen extends AppCompatActivity {
     }
 
 
-    public void onSave(View view){
-       // Ingredient ingredient = new Ingredient(title_input.getText().toString(), ingredients_input.getText().toString());
+    public void insertData(View view){
+
+        String title_ = title_input.getText().toString();
+        String ingredient_ = ingredients_input.getText().toString();
+        String description_ = description_input.getText().toString();
+
+
+
+      // creating a recipe
+        recipeDatabase.ingredientDao().create(title_, ingredient_, description_);
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+
     }
 
     public void onCancel(View view){
