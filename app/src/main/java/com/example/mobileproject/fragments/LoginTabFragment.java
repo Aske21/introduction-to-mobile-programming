@@ -1,5 +1,6 @@
 package com.example.mobileproject.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.mobileproject.MainActivity;
 import com.example.mobileproject.R;
+import com.example.mobileproject.activities.AddingScreen;
 import com.example.mobileproject.adapters.LoginAdapter;
 import com.example.mobileproject.room.entities.RecipeDatabase;
 import com.example.mobileproject.room.entities.User;
@@ -55,6 +57,9 @@ public class LoginTabFragment extends Fragment {
             public void onClick(View v)
             {
                 login(v);
+                Intent i = new Intent(getActivity(), MainActivity.class);
+                Toast.makeText(requireActivity(), "Welcome to Foody", Toast.LENGTH_SHORT).show();
+                startActivity(i);
             }
         });
 
@@ -81,7 +86,7 @@ public class LoginTabFragment extends Fragment {
             System.out.println("Success!");
             return;
         }else{
-            Toast.makeText(requireActivity(), "Check both fields!", Toast.LENGTH_LONG).show();
+            System.out.println("error");
         }
 
         Toast.makeText(requireActivity(), "Welcome to Foody", Toast.LENGTH_SHORT).show();
