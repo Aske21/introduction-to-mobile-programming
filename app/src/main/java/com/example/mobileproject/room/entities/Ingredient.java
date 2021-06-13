@@ -1,11 +1,8 @@
 package com.example.mobileproject.room.entities;
 
-import android.graphics.Bitmap;
-
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
-import java.util.Arrays;
 
 @Entity(tableName = "ingredients")
 public class Ingredient {
@@ -15,15 +12,21 @@ public class Ingredient {
     private String title;
     private String ingredients;
     private String Preparation;
-    private int rating;
+    private Integer rating;
+    @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
+    private byte[] image;
 
 
-    public Ingredient(long recipe_id, String title, String ingredients, int rating, String Preparation) {
+    public Ingredient(long recipe_id, String title, String ingredients, String preparation, Integer rating, byte[] image) {
         this.recipe_id = recipe_id;
         this.title = title;
         this.ingredients = ingredients;
+        this.Preparation = preparation;
         this.rating = rating;
-        this.Preparation = Preparation;
+        this.image = image;
+    }
+
+    public Ingredient(){
     }
 
 
@@ -41,12 +44,13 @@ public class Ingredient {
         return ingredients;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
     public String getPreparation() { return Preparation; }
 
+    public byte[] getImage() { return image; }
     // setters
 
 
@@ -62,11 +66,13 @@ public class Ingredient {
         this.ingredients = ingredients;
     }
 
-    public void setRating(int rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
     }
 
     public void setPreparation(String preparation) { Preparation = preparation; }
+
+    public void setImage(byte[] image) { this.image = image; }
     // to string
 
 

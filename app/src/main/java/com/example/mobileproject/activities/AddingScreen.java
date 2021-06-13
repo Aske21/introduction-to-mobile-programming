@@ -1,37 +1,39 @@
 package com.example.mobileproject.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mobileproject.MainActivity;
+import com.example.mobileproject.Converters.ImageConverter;
 import com.example.mobileproject.R;
-import com.example.mobileproject.fragments.MyRecipesFragment;
 import com.example.mobileproject.room.entities.Ingredient;
 import com.example.mobileproject.room.entities.RecipeDatabase;
-import com.example.mobileproject.room.entities.User;
+import com.example.mobileproject.room.entities.dao.IngredientDao;
 
+import java.io.FileDescriptor;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class AddingScreen extends AppCompatActivity {
 
-    private ImageView DishImage;
-    private Button AddButton;
-    private static final int PICK_IMAGE=1;
+    ImageView imageView;
+    Bitmap bmpImage;
     Uri imageUri;
-
-    // declarations
-    private EditText title_input, ingredients_input, description_input;
-
-    // db
+    private static final int PICK_IMAGE=1;
+    EditText Title, Ingredients, Description;
     private RecipeDatabase recipeDatabase;
 
     @Override
@@ -39,71 +41,56 @@ public class AddingScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.adding_screen);
 
-        title_input = findViewById(R.id.title);
-        ingredients_input  = findViewById(R.id.ingredients);
-        description_input  = findViewById(R.id.description);
+        imageView = findViewById(R.id.AddPictureDish);
 
-
-
-        DishImage = (ImageView) findViewById(R.id.AddPictureDish);
-        DishImage.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-
-                Intent gallery = new Intent();
-                gallery.setType("image/*");
-                gallery.setAction(Intent.ACTION_GET_CONTENT);
-
-                startActivityForResult(Intent.createChooser(gallery, "Select Picture"), PICK_IMAGE);
-                insertData(v);
-
-            }
-        });
-        AddButton = (Button) findViewById(R.id.AddingButton);
-        AddButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                finish();
-            }
-        });
+        Title = findViewById(R.id.DishTitle);
+        Ingredients = findViewById(R.id.ingredients);
+        Description = findViewById(R.id.description);
+        recipeDatabase = recipeDatabase.getInstance(this.getApplicationContext());
     }
-    @Override
-    protected void onActivityResult(int requestCode, int ResultCode, Intent data){
-        super.onActivityResult(requestCode, ResultCode, data);
 
-        if(requestCode == PICK_IMAGE && ResultCode == RESULT_OK){
+
+    public void AddDishImage(View view) {
+        Intent gallery = new Intent();
+        gallery.setType("image/*");
+        gallery.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(gallery, "Select Picture"), PICK_IMAGE);
+        }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == PICK_IMAGE && resultCode == RESULT_OK){
             imageUri = data.getData();
             try{
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
-                DishImage.setImageBitmap(bitmap);
-            } catch (IOException e){
+                bmpImage = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
+                imageView.setImageBitmap(bmpImage);
+            }catch(IOException e){
                 e.printStackTrace();
             }
         }
     }
 
-
-    public void insertData(View view){
-
-
-        String title_ = title_input.getText().toString();
-        String ingredient_ = ingredients_input.getText().toString();
-        String description_ = description_input.getText().toString();
-
-
-
-      // creating a recipe
-<<<<<<< HEAD
-        recipeDatabase.getInstance(this.getApplicationContext()).ingredientDao().create(title_, ingredient_, description_);
-
-=======
->>>>>>> d86c5e77f6915079050cd640a5c9bc576102e3c6
-
-
+    public void FinishAdding(View view) {
+        if(Title.getText().toString().isEmpty() || Ingredients.getText().toString().isEmpty() || Description.getText().toString().isEmpty() || bmpImage == null){
+            Toast.makeText(
+                    this,
+                    "Data is missing",
+                    Toast.LENGTH_SHORT
+            ).show();
+        }
+        else{
+            Ingredient ingredient = new Ingredient();
+            ingredient.setTitle(Title.getText().toString());
+            ingredient.setIngredients(Ingredients.getText().toString());
+            ingredient.setPreparation(Description.getText().toString());
+            byte[] imagebytes = ImageConverter.convertImage2ByteArray(bmpImage);
+            ingredient.setImage(imagebytes);
+            String title_field = Title.getText().toString();
+            String ingredients_field = Ingredients.getText().toString();
+            String description_field = Description.getText().toString();
+            recipeDatabase.ingredientDao().create(title_field, ingredients_field, description_field, imagebytes);
+            finish();
+        }
     }
-
-    public void onCancel(View view){
-
-    }
-
 }

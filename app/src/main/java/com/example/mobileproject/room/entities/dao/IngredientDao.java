@@ -15,8 +15,8 @@ import java.util.List;
 public interface IngredientDao {
 
 
-    @Query("INSERT INTO ingredients(title,ingredients,Preparation) VALUES(:title, :ingredients, :Preparation)")
-    public void create(String title, String ingredients, String Preparation);
+    @Query("INSERT INTO ingredients(image,title,ingredients,Preparation) VALUES(:image, :title, :ingredients, :Preparation)")
+    public void create(String title, String ingredients, String Preparation, byte[] image);
 
     @Update
     public void update(Ingredient ingredient);
