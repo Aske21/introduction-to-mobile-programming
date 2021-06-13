@@ -1,3 +1,4 @@
+
 package com.example.mobileproject.fragments;
 
 import android.os.Bundle;
@@ -47,7 +48,7 @@ public class RegisterTabFragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-               register(v);
+                register(v);
             }
         });
 

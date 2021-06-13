@@ -15,8 +15,8 @@ import java.util.List;
 public interface IngredientDao {
 
 
-    @Query("INSERT INTO ingredients(image,title,ingredients,Preparation) VALUES(:image, :title, :ingredients, :Preparation)")
-    public void create(String title, String ingredients, String Preparation, byte[] image);
+    @Query("INSERT INTO ingredients(image,title,ingredients,Preparation, user_id) VALUES(:image, :title, :ingredients, :Preparation, :user_id)")
+    public void create(String title, String ingredients, String Preparation, byte[] image, Long user_id);
 
     @Update
     public void update(Ingredient ingredient);
@@ -27,6 +27,6 @@ public interface IngredientDao {
     @Query("SELECT * FROM ingredients WHERE rating = 5")
     List<Ingredient> getTopRated();
 
-    @Query("SELECT * FROM ingredients WHERE recipe_id == :id")
+    @Query("SELECT * FROM ingredients WHERE recipe_id = :id")
     List<Ingredient> getMyRecipes(Long id);
 }

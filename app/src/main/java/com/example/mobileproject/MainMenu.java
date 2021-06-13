@@ -1,13 +1,20 @@
 package com.example.mobileproject;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.mobileproject.activities.AddingScreen;
+import com.example.mobileproject.activities.LoginActivity;
+import com.example.mobileproject.adapters.CurrentUser;
 import com.example.mobileproject.adapters.PagerAdapter;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+
+
 
 public class MainMenu extends AppCompatActivity {
 
@@ -15,6 +22,7 @@ public class MainMenu extends AppCompatActivity {
     private ViewPager viewPagerMMenu;
     private TabItem tab1, tab2, tab3;
     public PagerAdapter pagerAdapter;
+    public CurrentUser currentUser;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -56,5 +64,13 @@ public class MainMenu extends AppCompatActivity {
         });
 
         viewPagerMMenu.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+    }
+
+
+    public void Logout(View view) {
+
+        CurrentUser.getCurrentUser().deleteUser();
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }

@@ -16,6 +16,7 @@ import com.example.mobileproject.MainActivity;
 import com.example.mobileproject.MainMenu;
 import com.example.mobileproject.R;
 import com.example.mobileproject.activities.AddingScreen;
+import com.example.mobileproject.adapters.CurrentUser;
 import com.example.mobileproject.adapters.LoginAdapter;
 import com.example.mobileproject.room.entities.RecipeDatabase;
 import com.example.mobileproject.room.entities.User;
@@ -84,6 +85,7 @@ public class LoginTabFragment extends Fragment {
             // logic
             System.out.println("Success!");
             Intent i = new Intent(getActivity(), MainMenu.class);
+            CurrentUser.getCurrentUser().setUser(user);
             startActivity(i);
             return;
         }else{

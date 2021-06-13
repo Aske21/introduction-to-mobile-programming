@@ -11,6 +11,7 @@ public class Ingredient {
 
     @PrimaryKey(autoGenerate = true)
     private long recipe_id;
+    private int user_id;
     private String title;
     private String ingredients;
     private String Preparation;
@@ -20,11 +21,12 @@ public class Ingredient {
     private byte[] image;
 
 
-    public Ingredient(long recipe_id, String title, String ingredients, String preparation, Integer rating, byte[] image) {
+    public Ingredient(long recipe_id, int user_id, String title, String ingredients, String preparation, Integer rating, byte[] image) {
         this.recipe_id = recipe_id;
+        this.user_id = user_id;
         this.title = title;
         this.ingredients = ingredients;
-        this.Preparation = preparation;
+        Preparation = preparation;
         this.rating = rating;
         this.image = image;
     }
@@ -54,6 +56,11 @@ public class Ingredient {
     public String getPreparation() { return Preparation; }
 
     public byte[] getImage() { return image; }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
     // setters
 
 
@@ -76,13 +83,18 @@ public class Ingredient {
     public void setPreparation(String preparation) { Preparation = preparation; }
 
     public void setImage(byte[] image) { this.image = image; }
-    // to string
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+// to string
 
 
     @Override
     public String toString() {
         return "Ingredient{" +
                 "recipe_id=" + recipe_id +
+                ", user_id=" + user_id +
                 ", title='" + title + '\'' +
                 ", ingredients='" + ingredients + '\'' +
                 ", Preparation='" + Preparation + '\'' +

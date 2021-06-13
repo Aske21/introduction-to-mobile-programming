@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobileproject.Converters.ImageConverter;
 import com.example.mobileproject.R;
+import com.example.mobileproject.adapters.CurrentUser;
 import com.example.mobileproject.room.entities.Ingredient;
 import com.example.mobileproject.room.entities.RecipeDatabase;
 import com.example.mobileproject.room.entities.User;
@@ -95,8 +96,9 @@ public class AddingScreen extends AppCompatActivity {
             String title_field = Title.getText().toString();
             String ingredients_field = Ingredients.getText().toString();
             String description_field = Description.getText().toString();
+            Long user_id = CurrentUser.getCurrentUser().getUser().getId();
 
-            recipeDatabase.ingredientDao().create(title_field, ingredients_field, description_field, imagebytes);
+            recipeDatabase.ingredientDao().create(title_field, ingredients_field, description_field, imagebytes, user_id);
 
             for(Ingredient x:recipeDatabase.ingredientDao().getAll()) {
                 System.out.println(x.toString());
