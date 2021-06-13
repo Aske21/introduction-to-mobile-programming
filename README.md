@@ -14,3 +14,4 @@ users on the application. The application will be called “Foody”
 
 
 # Folder structure
+<img src="https://prnt.sc/15b5jbo" width="250">
