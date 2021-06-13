@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.Arrays;
+
 @Entity(tableName = "ingredients")
 public class Ingredient {
 
@@ -13,6 +15,7 @@ public class Ingredient {
     private String ingredients;
     private String Preparation;
     private Integer rating;
+
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
     private byte[] image;
 
@@ -82,7 +85,9 @@ public class Ingredient {
                 "recipe_id=" + recipe_id +
                 ", title='" + title + '\'' +
                 ", ingredients='" + ingredients + '\'' +
+                ", Preparation='" + Preparation + '\'' +
                 ", rating=" + rating +
+                ", image=" + Arrays.toString(image) +
                 '}';
     }
 }

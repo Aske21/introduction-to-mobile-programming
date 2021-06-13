@@ -42,6 +42,8 @@ public class AddingScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.adding_screen);
 
+
+
         imageView = findViewById(R.id.AddPictureDish);
 
         Title = findViewById(R.id.DishTitle);
@@ -66,6 +68,7 @@ public class AddingScreen extends AppCompatActivity {
             try{
                 bmpImage = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
                 imageView.setImageBitmap(bmpImage);
+
             }catch(IOException e){
                 e.printStackTrace();
             }
@@ -81,15 +84,18 @@ public class AddingScreen extends AppCompatActivity {
             ).show();
         }
         else{
-            Ingredient ingredient = new Ingredient();
-            ingredient.setTitle(Title.getText().toString());
-            ingredient.setIngredients(Ingredients.getText().toString());
-            ingredient.setPreparation(Description.getText().toString());
+
+
+
+
             byte[] imagebytes = ImageConverter.convertImage2ByteArray(bmpImage);
-            ingredient.setImage(imagebytes);
+
+            System.out.println(imagebytes.toString());
+
             String title_field = Title.getText().toString();
             String ingredients_field = Ingredients.getText().toString();
             String description_field = Description.getText().toString();
+
             recipeDatabase.ingredientDao().create(title_field, ingredients_field, description_field, imagebytes);
 
             for(Ingredient x:recipeDatabase.ingredientDao().getAll()) {

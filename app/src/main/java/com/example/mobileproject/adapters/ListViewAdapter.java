@@ -53,7 +53,7 @@ public class ListViewAdapter extends BaseAdapter {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = layoutInflater.inflate(R.layout.list_row,parent,false);
             listViewHolder = new ListViewHolder();
-            listViewHolder.Name
+
         }
         return null;
     }
