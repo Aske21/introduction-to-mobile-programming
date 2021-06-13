@@ -10,4 +10,7 @@ The user can also upload their own recipes on the application either for
 private viewing, so that they can use it as a cook book, or they can publish their recipes to other 
 users on the application. The application will be called “Foody”
 
-![alt text](https://prnt.sc/15b59pf)
+![phone](https://prnt.sc/15b59pf)
+
+
+# Folder structure
