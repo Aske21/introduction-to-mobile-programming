@@ -24,7 +24,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="casual"
-        android:text="Current Top 10 User Rated Recipes"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/black"
