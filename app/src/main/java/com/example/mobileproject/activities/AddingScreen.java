@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobileproject.MainActivity;
 import com.example.mobileproject.R;
+import com.example.mobileproject.fragments.MyRecipesFragment;
 import com.example.mobileproject.room.entities.Ingredient;
 import com.example.mobileproject.room.entities.RecipeDatabase;
 import com.example.mobileproject.room.entities.User;
@@ -22,6 +24,7 @@ import java.io.IOException;
 public class AddingScreen extends AppCompatActivity {
 
     private ImageView DishImage;
+    private Button AddButton;
     private static final int PICK_IMAGE=1;
     Uri imageUri;
 
@@ -53,9 +56,16 @@ public class AddingScreen extends AppCompatActivity {
 
                 startActivityForResult(Intent.createChooser(gallery, "Select Picture"), PICK_IMAGE);
                 insertData(v);
+
             }
         });
-
+        AddButton = (Button) findViewById(R.id.AddingButton);
+        AddButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                finish();
+            }
+        });
     }
     @Override
     protected void onActivityResult(int requestCode, int ResultCode, Intent data){
@@ -82,10 +92,9 @@ public class AddingScreen extends AppCompatActivity {
 
 
       // creating a recipe
-        recipeDatabase.ingredientDao().create(title_, ingredient_, description_);
+        recipeDatabase.getInstance(this.getApplicationContext()).ingredientDao().create(title_, ingredient_, description_);
 
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+
 
     }
 
