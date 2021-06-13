@@ -21,6 +21,7 @@ import com.example.mobileproject.Converters.ImageConverter;
 import com.example.mobileproject.R;
 import com.example.mobileproject.room.entities.Ingredient;
 import com.example.mobileproject.room.entities.RecipeDatabase;
+import com.example.mobileproject.room.entities.User;
 import com.example.mobileproject.room.entities.dao.IngredientDao;
 
 import java.io.FileDescriptor;
@@ -90,7 +91,12 @@ public class AddingScreen extends AppCompatActivity {
             String ingredients_field = Ingredients.getText().toString();
             String description_field = Description.getText().toString();
             recipeDatabase.ingredientDao().create(title_field, ingredients_field, description_field, imagebytes);
-            finish();
+
+            for(Ingredient x:recipeDatabase.ingredientDao().getAll()) {
+                System.out.println(x.toString());
+            }
+
+                finish();
         }
     }
 }
