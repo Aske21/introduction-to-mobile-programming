@@ -17,7 +17,9 @@ import com.example.mobileproject.room.entities.dao.UserDao;
         entities = {User.class, Ingredient.class,Image.class}
 
 )
-@TypeConverters(ImageConverter.class)
+@TypeConverters({ImageConverter.class})
+
+
 public abstract class RecipeDatabase extends RoomDatabase {
     public abstract ImageDao imageDao();
     public abstract UserDao userDao();

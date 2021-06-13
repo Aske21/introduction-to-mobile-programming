@@ -6,9 +6,8 @@ import androidx.room.PrimaryKey;
 
 import java.util.ArrayList;
 
+@Entity(tableName = "Image")
 public class Image {
-    @Entity(tableName = "Image")
-    public class Test{
 
         @PrimaryKey
         @ColumnInfo(name = "image_id")
@@ -16,5 +15,5 @@ public class Image {
 
         @ColumnInfo(name = "imageList")
         private ArrayList<String> image;
-    }
+
 }
