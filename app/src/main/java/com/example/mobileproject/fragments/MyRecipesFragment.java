@@ -14,6 +14,7 @@ import android.widget.ListView;
 
 import com.example.mobileproject.R;
 import com.example.mobileproject.activities.AddingScreen;
+import com.example.mobileproject.adapters.ListViewAdapter;
 import com.example.mobileproject.room.entities.Ingredient;
 import com.example.mobileproject.room.entities.RecipeDatabase;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,6 +22,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.List;
 
 public class MyRecipesFragment extends Fragment implements View.OnClickListener {
+    private ListView listView;
 
     FloatingActionButton myButton;
 
@@ -48,7 +50,6 @@ public class MyRecipesFragment extends Fragment implements View.OnClickListener 
         Intent i = new Intent(getActivity(), AddingScreen.class);
         startActivity(i);
     }
-
 
 
 }
