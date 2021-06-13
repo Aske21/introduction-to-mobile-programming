@@ -75,6 +75,7 @@ public class AddingScreen extends AppCompatActivity {
 
     public void insertData(View view){
 
+
         String title_ = title_input.getText().toString();
         String ingredient_ = ingredients_input.getText().toString();
         String description_ = description_input.getText().toString();
@@ -82,7 +83,6 @@ public class AddingScreen extends AppCompatActivity {
 
 
       // creating a recipe
-        recipeDatabase.ingredientDao().create(title_, ingredient_, description_);
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

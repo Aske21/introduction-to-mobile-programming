@@ -1,5 +1,7 @@
 package com.example.mobileproject.room.entities.dao;
 
+import android.graphics.Bitmap;
+
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -14,7 +16,7 @@ public interface IngredientDao {
 
 
     @Query("INSERT INTO ingredients(title,ingredients,Preparation) VALUES(:title, :ingredients, :Preparation)")
-    public void create(String title,String ingredients,String Preparation);
+    public void create(String title, String ingredients, String Preparation);
 
     @Update
     public void update(Ingredient ingredient);

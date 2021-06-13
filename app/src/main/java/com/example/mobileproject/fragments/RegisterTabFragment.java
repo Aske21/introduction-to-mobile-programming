@@ -1,6 +1,8 @@
 package com.example.mobileproject.fragments;
 
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +56,8 @@ public class RegisterTabFragment extends Fragment {
         return root;
     }
 
+
+
     // register  method - needs work
     public void register(View view){
 
@@ -67,6 +71,7 @@ public class RegisterTabFragment extends Fragment {
 
         // probably need to parse to string in order for it to be able to check users
         User user = recipeDatabase.getInstance(this.getContext()).userDao().getUserByEmail(email_field);
+
 
 
         if(user == null){
