@@ -1,5 +1,5 @@
 # introduction-to-mobile-programming
-Introduction to Mobile Programming Assigment / Project
+Introduction to Mobile Programming Assigment / Project - Foody
 
 
 # The Application 
@@ -13,5 +13,6 @@ users on the application. The application will be called “Foody”
 ![phone](https://prnt.sc/15b59pf)
 
 
-# Folder structure
-<img src="https://prnt.sc/15b5jbo" width="250">
+# Team
+- Asim Veledarević
+- Anes Mehović
